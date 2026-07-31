@@ -15,15 +15,15 @@ Einheit und Leerheit.**
 
 **Nicht-Verstehen-Wollen, ohne das zu wollen (wu nien)**
 
-## Voraussetzung:
+### Voraussetzung:
 
 - Erfahrungen mit Zazen und Kinhin
 - Entschlossenheit zur täglichen Praxis
 - Disziplin zur regelmäßigen Teilnahme
 
-**Zeit: Montag, 18:30 – 20:00**
+### **Zeit: Montag, 18:30 – 20:00**
 
-**Ort: Linz – Pichling**
+### **Ort: Linz – Pichling**
 
 **6 Personen - Gruppe**
 
@@ -35,7 +35,8 @@ kostenlos
 
 Kontakt: s. Impressum
 
-**Zazen bedeutet, dass unser Selbst
-unser Selbst unser Selbst sein lässt.**
+> **Zazen bedeutet, dass unser Selbst**  
+> **unser Selbst unser Selbst sein lässt.**
 
 KoDo Sawaki
+
