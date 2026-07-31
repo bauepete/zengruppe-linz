@@ -1,22 +1,21 @@
 ---
 title: Zen Linz
 ---
+# Zazen - Kinhin
 
-**Zazen - Kinhin**
-
-**Was ist Zen?**
+## **Was ist Zen?**
 
 **Aufwachen aus dem Traum der Vorstellungen,
 Erwachen zur Gegenwart, zum reinen So-Sein der Wirklichkeit:
 Einheit und Leerheit.**
 
-**Was tun? - NICHTS!**
+## **Was tun? - NICHTS!**
 
 **Nicht-Üben, ohne das zu wollen (wu wei)**
 
 **Nicht-Verstehen-Wollen, ohne das zu wollen (wu nien)**
 
-Voraussetzung:
+## Voraussetzung:
 
 - Erfahrungen mit Zazen und Kinhin
 - Entschlossenheit zur täglichen Praxis
