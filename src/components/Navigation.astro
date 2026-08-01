@@ -1,5 +1,6 @@
 ---
 const base = import.meta.env.BASE_URL;
+const baseHref = base.endsWith('/') ? base : `${base}/`;
 
 const normalize = (path: string) => {
   const normalized = '/' + path.replace(/^\/+|\/+$/g, '');
@@ -27,8 +28,8 @@ const items = [
 
 const hrefFor = (path: string) =>
   path === '/'
-    ? base
-    : `${base}${path.slice(1)}/`;
+    ? baseHref
+    : `${baseHref}${path.slice(1)}/`;
 ---
 
 <div class="header-content">
