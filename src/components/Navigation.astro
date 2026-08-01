@@ -1,15 +1,34 @@
 ---
 const base = import.meta.env.BASE_URL;
-const pathname = Astro.url.pathname;
+
+const normalize = (path: string) => {
+  const normalized = '/' + path.replace(/^\/+|\/+$/g, '');
+  return normalized === '/' ? '/' : normalized;
+};
+
+const basePath = normalize(base);
+const pathname = normalize(Astro.url.pathname);
+
+// GitHub-Pages-Prefix entfernen:
+// /zengruppe-linz/impressum -> /impressum
+const currentPath =
+  basePath !== '/' && pathname.startsWith(basePath)
+    ? normalize(pathname.slice(basePath.length))
+    : pathname;
 
 const items = [
-  { href: base, label: 'Home' },
-  { href: `${base}leere-wolke/`, label: 'Zen-Linie "Leere Wolke"' },
-  { href: `${base}begleitung/`, label: 'Begleitung' },
-  { href: `${base}zendo-und-garten/`, label: 'Zendo und Garten' },
-  { href: `${base}links/`, label: 'Links' },
-  { href: `${base}impressum/`, label: 'Impressum' },
+  { path: '/', label: 'Home' },
+  { path: '/leere-wolke', label: 'Zen-Linie "Leere Wolke"' },
+  { path: '/begleitung', label: 'Begleitung' },
+  { path: '/zendo-und-garten', label: 'Zendo und Garten' },
+  { path: '/links', label: 'Links' },
+  { path: '/impressum', label: 'Impressum' },
 ];
+
+const hrefFor = (path: string) =>
+  path === '/'
+    ? base
+    : `${base}${path.slice(1)}/`;
 ---
 
 <div class="header-content">
@@ -17,10 +36,10 @@ const items = [
 
   <nav class="navigation">
     {
-      items.map(({ href, label }) => (
+      items.map(({ path, label }) => (
         <a
-          href={href}
-          class={pathname === href ? 'active' : ''}
+          href={hrefFor(path)}
+          class={currentPath === path ? 'active' : ''}
         >
           {label}
         </a>
