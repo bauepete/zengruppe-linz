@@ -1,0 +1,30 @@
+---
+const base = import.meta.env.BASE_URL;
+const pathname = Astro.url.pathname;
+
+const items = [
+  { href: base, label: 'Home' },
+  { href: `${base}leere-wolke/`, label: 'Zen-Linie "Leere Wolke"' },
+  { href: `${base}begleitung/`, label: 'Begleitung' },
+  { href: `${base}zendo-und-garten/`, label: 'Zendo und Garten' },
+  { href: `${base}links/`, label: 'Links' },
+  { href: `${base}impressum/`, label: 'Impressum' },
+];
+---
+
+<div class="header-content">
+  <a class="site-title" href={base}>Zen Linz</a>
+
+  <nav class="navigation">
+    {
+      items.map(({ href, label }) => (
+        <a
+          href={href}
+          class={pathname === href ? 'active' : ''}
+        >
+          {label}
+        </a>
+      ))
+    }
+  </nav>
+</div>
