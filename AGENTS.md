@@ -1,22 +1,19 @@
-## Development
+# Website for `zengruppe-linz`
 
-When starting the dev server, use background mode:
+## Project
 
-```
-astro dev --background
-```
+Static website for zengruppe-linz.at, implemented with Astro and deployed via GitHub Pages.
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+The goal is a small, simple, maintainable static site. Avoid unnecessary frameworks, dependencies, JavaScript, or abstractions.
 
-## Documentation
+## Conventions
 
-Full documentation: https://docs.astro.build
+- Use `BaseLayout.astro` for all pages.
+- Use semantic HTML and avoid inline styles.
+- Keep images responsive; avoid fixed pixel dimensions unless necessary.
 
-Consult these guides before working on related tasks:
+## Path handling
 
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+Base URLs and asset paths are handled centrally in `src/utils/paths.ts`.
+
+Use `assetPath()` for assets in `public/`. Do not hard-code `/public/`, `/images/`, or the GitHub Pages base path in asset URLs.
