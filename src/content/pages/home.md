@@ -1,6 +1,7 @@
 ---
 title: Zen Linz
 ---
+
 # Zazen - Kinhin
 
 ## **Was ist Zen?**
@@ -11,11 +12,10 @@ Einheit und Leerheit.**
 
 ## **Was tun? - NICHTS!**
 
-**Nicht-Üben, ohne das zu wollen (wu wei)**
+- **Nicht-Üben, ohne das zu wollen (wu wei)**
+- **Nicht-Verstehen-Wollen, ohne das zu wollen (wu nien)**
 
-**Nicht-Verstehen-Wollen, ohne das zu wollen (wu nien)**
-
-### Voraussetzung:
+### Voraussetzung
 
 - Erfahrungen mit Zazen und Kinhin
 - Entschlossenheit zur täglichen Praxis
@@ -25,9 +25,8 @@ Einheit und Leerheit.**
 
 ### **Ort: Linz – Pichling**
 
-**6 Personen - Gruppe**
-
-**Einstieg jederzeit möglich**
+- **6 Personen - Gruppe**
+- **Einstieg jederzeit möglich**
 
 Freie Plätze: 1
 
@@ -39,4 +38,3 @@ Kontakt: s. Impressum
 > **unser Selbst unser Selbst sein lässt.**
 
 KoDo Sawaki
-
