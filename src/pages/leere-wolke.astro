@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { assetPath } from "../utils/paths";
 ---
 
 <BaseLayout title="Leere Wolke">
@@ -12,7 +13,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
 
     <p class="centered-image">
-      <img src="/public/images/leerewolke.png" alt="Leere Wolke" />
+      <img src={ assetPath("/images/leerewolke.png") } alt="Leere Wolke" />
     </p>
 
     <p>

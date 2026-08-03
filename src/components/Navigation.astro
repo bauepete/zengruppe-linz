@@ -1,6 +1,5 @@
 ---
-const base = import.meta.env.BASE_URL;
-const baseHref = base.endsWith('/') ? base : `${base}/`;
+import { base, baseHref } from "../utils/paths";
 
 const normalize = (path: string) => {
   const normalized = '/' + path.replace(/^\/+|\/+$/g, '');
@@ -33,7 +32,7 @@ const hrefFor = (path: string) =>
 ---
 
 <div class="header-content">
-  <a class="site-title" href={base}>Zen Linz</a>
+  <a class="site-title" href={baseHref}>Zen Linz</a>
 
   <nav class="navigation">
     {
