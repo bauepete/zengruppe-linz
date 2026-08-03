@@ -11,6 +11,7 @@ The goal is a small, simple, maintainable static site. Avoid unnecessary framewo
 - Use `BaseLayout.astro` for all pages.
 - Use semantic HTML and avoid inline styles.
 - Keep images responsive; avoid fixed pixel dimensions unless necessary.
+- Markdown-backed Astro pages must use the shared component `ContentPage.astro` rather than duplicating collection lookup and 404 handling in page frontmatter.
 
 ## Path handling
 

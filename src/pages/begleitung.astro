@@ -1,18 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { getEntry, render } from "astro:content";
-
-const page = await getEntry("pages", "begleitung");
-
-if (!page) {
-  throw new Error("Page not found: begleitung");
-}
-
-const { Content } = await render(page);
+import ContentPage from "../components/ContentPage.astro";
 ---
 
-<BaseLayout title={page.data.title}>
-  <main>
-    <Content />
-  </main>
-</BaseLayout>
+<ContentPage entryId="begleitung" />
