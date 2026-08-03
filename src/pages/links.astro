@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { assetPath } from "../utils/paths"
 ---
 
 <BaseLayout title="Links">
@@ -13,7 +14,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         rel="noopener noreferrer"
       >
         <img
-          src="/public/images/west-oestliche-weisheit-stiftung-logo.png"
+          src={assetPath("/images/west-oestliche-weisheit-stiftung-logo.png")}
           alt="West-Östliche Weisheit Stiftung"
         />
       </a>
@@ -26,7 +27,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         rel="noopener noreferrer"
       >
         <img
-          src="/public/images/logo_benediktushof.png"
+          src={assetPath("/images/logo_benediktushof.png")}
           alt="Benediktushof"
         />
       </a>
