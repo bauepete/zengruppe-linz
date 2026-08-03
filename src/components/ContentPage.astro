@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry, render } from "astro:content";
+
+interface Props {
+  entryId: string;
+  notFoundMessage?: string;
+}
+
+const { entryId, notFoundMessage } = Astro.props as Props;
+
+const page = await getEntry("pages", entryId);
+
+if (!page) {
+  throw new Error(notFoundMessage ?? `Page not found: ${entryId}`);
+}
+
+const { Content } = await render(page);
+---
+
+<BaseLayout title={page.data.title}>
+  <Content />
+</BaseLayout>
