@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 
-<<<<<<< HEAD
 const target = process.env.DEPLOY_TARGET ?? "development";
 
 const targets = {
@@ -23,9 +22,3 @@ if (!(target in targets)) {
 }
 
 export default defineConfig(targets[target]);
-=======
-export default defineConfig({
-  site: "https://zengruppe-linz.github.io",
-  base: "/development",
-});
->>>>>>> 83cde52 (Setup deployment for development)
