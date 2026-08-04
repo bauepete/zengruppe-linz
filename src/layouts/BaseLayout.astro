@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro'
+import { assetPath } from '../utils/paths';
 
 const { title = 'Zen Linz' } = Astro.props;
 const base = import.meta.env.BASE_URL
@@ -23,7 +24,7 @@ const base = import.meta.env.BASE_URL
 
   <body
     class="site"
-    style={`background-image: url('${base}/images/bg-2.jpg')`}
+    style={`background-image: url('${assetPath("images/bg-2.jpg")}`}
   >
     <header>
       <Navigation />
