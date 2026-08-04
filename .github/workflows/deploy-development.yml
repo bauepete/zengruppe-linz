@@ -1,9 +1,12 @@
-name: Deploy to GitHub Pages
+name: Deploy Development
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+env:
+  DEPLOY_TARGET: development
 
 permissions:
   contents: read
