@@ -70,11 +70,17 @@ The system SHALL treat these fields as content semantics only (what media is sho
 ### Requirement: Markdown-capable rich text fields
 
 The system SHALL treat introText, paragraph text, quote text, unorderedList items, and orderedList items as Markdown-capable content while treating title, heroImageAlt, sectionTitle text, subsectionTitle text, and quote author as plain text.
+For multiline values in Markdown-capable fields, explicit newline characters SHALL be preserved as rendered line breaks.
 
 #### Scenario: Inline emphasis markup is authored in rich text fields
 
 - **WHEN** an editor enters Markdown emphasis syntax in introText or paragraph text
 - **THEN** the rendered output includes the corresponding semantic emphasis markup
+
+#### Scenario: Multiline quote text preserves explicit line breaks
+
+- **WHEN** an editor provides quote text using YAML literal block style (`|`) with explicit line breaks
+- **THEN** the rendered quote preserves those line breaks in the output
 
 ### Requirement: Inline link normalization and safety
 

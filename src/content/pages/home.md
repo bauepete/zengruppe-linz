@@ -5,12 +5,13 @@ content:
   - type: sectionTitle
     text: Was ist Zen?
   - type: paragraph
-    text: "**Aufwachen aus dem Traum der Vorstellungen Erwachen zur Gegenwart, zum reinen So-Sein der Wirklichkeit: Einheit und Leerheit.**"
+    text: >
+      **Aufwachen aus dem Traum der Vorstellungen Erwachen zur Gegenwart, zum reinen So-Sein der Wirklichkeit: Einheit und Leerheit.**"
   - type: sectionTitle
     text: "Was tun? - NICHTS!"
   - type: unorderedList
     items:
-      - Nicht-Uben, ohne das zu wollen (wu wei)
+      - Nicht-Üben, ohne das zu wollen (wu wei)
       - Nicht-Verstehen-Wollen, ohne das zu wollen (wu nien)
   - type: subsectionTitle
     text: Voraussetzungen
@@ -18,7 +19,7 @@ content:
     items:
       - Erfahrung mit Zazen und Kinhin
       - Entschlossenheit zur taglichen Praxis
-      - Disziplin zur regelmaBigen Teilnahme
+      - Disziplin zur regelmäßigen Teilnahme
   - type: subsectionTitle
     text: "Zeit: Montag, 18:30 - 20:00"
   - type: subsectionTitle
@@ -26,9 +27,9 @@ content:
   - type: unorderedList
     items:
       - 6 Personen
-      - Einstieg jederzeit moglich
+      - Einstieg jederzeit möglich
   - type: paragraph
-    text: "Freie Platze: 1"
+    text: "Freie Plätze: 1"
   - type: paragraph
     text: kostenlos
   - type: paragraph

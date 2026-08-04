@@ -86,7 +86,8 @@ const renderInlineMarkdown = (value: string) => {
 
   const emphasized = escapeHtml(withLinkTokens)
     .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/_(.+?)_/g, "<em>$1</em>");
+    .replace(/_(.+?)_/g, "<em>$1</em>")
+    .replace(/\r\n|\r|\n/g, "<br>");
 
   return emphasized.replace(/\u0000(\d+)\u0000/g, (_, idx: string) => {
     const index = Number(idx);
