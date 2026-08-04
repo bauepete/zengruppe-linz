@@ -76,6 +76,33 @@ The system SHALL treat introText, paragraph text, quote text, unorderedList item
 - **WHEN** an editor enters Markdown emphasis syntax in introText or paragraph text
 - **THEN** the rendered output includes the corresponding semantic emphasis markup
 
+### Requirement: Inline link normalization and safety
+
+The system SHALL normalize inline markdown links in Markdown-capable fields with the following behavior:
+
+- `http` and `https` links are rendered as external anchors.
+- Root-relative links (starting with `/`) are normalized through the page path utility so deployment base paths are respected.
+- Hash-only (`#...`) and dot-relative (`./...`, `../...`) links are preserved as authored.
+- Bare page slugs (`impressum`, `impressum#kontakt`) are resolved to internal page paths.
+- Protocol-relative URLs (`//...`) and unsupported schemes are treated as invalid and MUST NOT render as anchors.
+
+When an inline link target is invalid, the renderer SHALL keep the link label text as escaped plain text without emitting an anchor element.
+
+#### Scenario: Root-relative internal link respects base path
+
+- **WHEN** an editor writes an inline link such as `[Impressum](/impressum/)`
+- **THEN** the rendered href uses the resolved page path including the configured base path
+
+#### Scenario: Bare internal page slug is resolved
+
+- **WHEN** an editor writes an inline link such as `[Impressum](impressum)`
+- **THEN** the rendered href points to the internal page path for that slug
+
+#### Scenario: Unsupported inline link target is sanitized
+
+- **WHEN** an editor writes an inline link with an unsupported target scheme or protocol-relative URL
+- **THEN** the renderer outputs only the escaped link text and does not emit an anchor element
+
 ### Requirement: Structured lists map to semantic HTML lists
 
 The system SHALL render `type: unorderedList` blocks as unordered lists and `type: orderedList` blocks as ordered lists in narrative page templates.

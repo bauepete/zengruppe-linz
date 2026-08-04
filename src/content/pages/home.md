@@ -34,6 +34,8 @@ content:
   - type: paragraph
     text: "Kontakt: [siehe Impressum](/impressum/)"
   - type: quote
-    text: Zazen bedeutet, dass unser Selbst unser Selbst unser Selbst sein lasst.
+    text: |
+      Zazen bedeutet, dass unser Selbst 
+      unser Selbst unser Selbst sein lasst.
     author: KoDo Sawaki
 ---
