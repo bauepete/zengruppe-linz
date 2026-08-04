@@ -22,7 +22,7 @@ if (!page) {
   throw new Error(notFoundMessage ?? `Page not found: ${entryId}`);
 }
 
-if ((page.data.template ?? page.data.pageType) !== "structured-narrative") {
+if (page.data.template !== "structured-narrative") {
   throw new Error(`Entry ${entryId} is not a structured-narrative page`);
 }
 

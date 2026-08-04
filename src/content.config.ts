@@ -113,8 +113,27 @@ const pages = defineCollection({
       linkReferences: z.array(linkReferenceSchema).optional(),
     })
     .superRefine((value, ctx) => {
-      const template = value.template ?? value.pageType;
-      if (template !== "structured-narrative") {
+      const hasStructuredNarrativeFields =
+        value.introText !== undefined ||
+        value.heroImage !== undefined ||
+        value.heroImageAlt !== undefined ||
+        value.content !== undefined ||
+        value.linkReferences !== undefined ||
+        value.pageType === "structured-narrative";
+
+      if (
+        hasStructuredNarrativeFields &&
+        value.template !== "structured-narrative"
+      ) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message:
+            "template must be set to structured-narrative for structured narrative entries",
+          path: ["template"],
+        });
+      }
+
+      if (value.template !== "structured-narrative") {
         return;
       }
 

@@ -29,7 +29,7 @@
 
 ## Cleanup
 
-- [ ] C.1 Make `template: structured-narrative` required for structured narrative entries in the schema and remove the implicit fallback behavior.
+- [x] C.1 Make `template: structured-narrative` required for structured narrative entries in the schema and remove the implicit fallback behavior.
 - [ ] C.2 Decide and document whether `pageType` should remain supported; if yes, add it explicitly to the spec, otherwise remove it from implementation.
 - [ ] C.3 Align OpenSpec artifacts on quote support by ensuring proposal/tasks/spec text consistently document `type: quote` and optional `author`.
 - [ ] C.4 Specify and verify inline link normalization behavior (supported forms, unsupported-form handling, and base-path-safe resolution) in spec scenarios.
