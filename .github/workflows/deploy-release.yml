@@ -47,6 +47,7 @@ jobs:
           rm -rf production/*
           cp -R dist/. production/
           touch production/.nojekyll
+          echo "zengruppe-linz.at" > production/CNAME
 
       - name: Commit and push production
         run: |
