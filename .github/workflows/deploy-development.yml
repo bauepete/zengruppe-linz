@@ -1,8 +1,12 @@
+<<<<<<< HEAD:.github/workflows/deploy-development.yml
 name: Deploy Development
+=======
+name: Deploy development branch to GitHub Pages
+>>>>>>> 83cde52 (Setup deployment for development):.github/workflows/deploy.yml
 
 on:
   push:
-    branches: [main]
+    branches: [development]
   workflow_dispatch:
 
 env:
