@@ -103,7 +103,6 @@ const pages = defineCollection({
     .object({
       title: z.string().min(1),
       template: z.enum(["structured-narrative"]).optional(),
-      pageType: z.enum(["structured-narrative"]).optional(),
       // Markdown-capable inline field.
       introText: z.string().optional(),
       heroImage: z.string().optional(),
@@ -118,8 +117,7 @@ const pages = defineCollection({
         value.heroImage !== undefined ||
         value.heroImageAlt !== undefined ||
         value.content !== undefined ||
-        value.linkReferences !== undefined ||
-        value.pageType === "structured-narrative";
+        value.linkReferences !== undefined;
 
       if (
         hasStructuredNarrativeFields &&
