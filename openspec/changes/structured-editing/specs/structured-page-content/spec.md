@@ -1,3 +1,5 @@
+# Structured Page Content
+
 ## Purpose
 
 Enable non-technical editors to update narrative pages through structured content fields that can be edited safely in Pages CMS and rendered consistently in Astro.
@@ -24,6 +26,7 @@ Each element in `content` SHALL be exactly one typed block with one of the follo
 ### Requirement: Conditional and completeness validation
 
 The system SHALL validate structured narrative entries such that title is required, template is required with value `structured-narrative`, heroImageAlt is required when heroImage is set, and at least one `paragraph`, `quote`, `unorderedList`, or `orderedList` content block contains content.
+For typed content blocks, `text` SHALL be required for `sectionTitle`, `subsectionTitle`, `paragraph`, and `quote`, while `author` on `quote` SHALL remain optional.
 
 #### Scenario: Image alt text is missing
 
@@ -34,6 +37,11 @@ The system SHALL validate structured narrative entries such that title is requir
 
 - **WHEN** no paragraph, quote, unorderedList, or orderedList block in content has textual items
 - **THEN** schema validation fails with an error requiring at least one populated content block
+
+#### Scenario: Quote block omits text
+
+- **WHEN** a quote block is present without text
+- **THEN** schema validation fails with an error indicating quote text is required
 
 ### Requirement: Media field definitions and behavior
 
