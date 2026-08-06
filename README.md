@@ -1,43 +1,49 @@
-# Astro Starter Kit: Minimal
+# Zengruppe Linz Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## Editing the Content
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Pages are edited as Markdown files with YAML frontmatter in src/content/pages.
 
-## 🚀 Project Structure
+For structured pages, set template to structured-narrative and use these frontmatter fields:
 
-Inside of your Astro project, you'll see the following folders and files:
+- title: required page title
+- template: set to structured-narrative
+- introText: optional intro text, supports inline Markdown
+- heroImage: optional image path under /images
+- heroImageAlt: required when heroImage is set
+- content: ordered list of typed blocks
+- linkReferences: optional list of curated links
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Supported content block types in content:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- type: sectionTitle with text (required)
+- type: subsectionTitle with text (required)
+- type: paragraph with text (required, inline Markdown supported)
+- type: unorderedList with items (required list of strings)
+- type: orderedList with items (required list of strings)
+- type: quote with text (required) and author (optional)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Link reference entries in linkReferences:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- label: required link text
+- targetType: one of internal-page, internal-subsection, external-url
+- page: required for internal-page and internal-subsection
+- subsection: required for internal-subsection
+- url: required for external-url and must start with http:// or https://
 
-## 🧞 Commands
+Multiline text behavior:
 
-All commands are run from the root of the project, from a terminal:
+- Use YAML literal style | when line breaks should be preserved exactly.
+- Use YAML folded style > when newlines should be folded into running text.
+- In rendered output, explicit newlines in Markdown-capable text become line breaks.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Inline links inside Markdown-capable text support:
 
-## 👀 Want to learn more?
+- `[label](/path/)` root-relative internal links (normalized with base path)
+- `[label](impressum)` bare internal page slug links
+- `[label](#anchor)`, `[label](./relative)`, `[label](../relative)`
+- `[label](https://example.org)` external links
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Unsupported inline link targets (for example protocol-relative URLs or unsupported schemes) are sanitized and rendered as plain text labels.
+
+## Deployment

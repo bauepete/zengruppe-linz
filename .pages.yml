@@ -7,10 +7,124 @@ content:
     label: Seiten
     type: collection
     path: src/content/pages
+    format: yaml-frontmatter
     fields:
       - name: title
         label: Titel
         type: string
+        required: true
+
+      - name: template
+        label: Vorlage
+        type: select
+        options:
+          values:
+            - structured-narrative
+
+      - name: introText
+        label: Einleitungstext
+        type: text
+
+      - name: heroImage
+        label: Hauptbild
+        type: image
+
+      - name: heroImageAlt
+        label: Bildbeschreibung
+        type: string
+
+      - name: content
+        label: Inhaltsbausteine
+        type: block
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{type} #{index}"
+        blockKey: type
+        blocks:
+          - name: sectionTitle
+            label: Abschnittstitel
+            fields:
+              - name: text
+                label: Text
+                type: string
+                required: true
+
+          - name: subsectionTitle
+            label: Unterabschnittstitel
+            fields:
+              - name: text
+                label: Text
+                type: string
+                required: true
+
+          - name: paragraph
+            label: Absatz
+            fields:
+              - name: text
+                label: Text
+                type: text
+                required: true
+
+          - name: unorderedList
+            label: Ungeordnete Liste
+            fields:
+              - name: items
+                label: Elemente
+                type: string
+                list: true
+                required: true
+
+          - name: orderedList
+            label: Geordnete Liste
+            fields:
+              - name: items
+                label: Elemente
+                type: string
+                list: true
+                required: true
+
+          - name: quote
+            label: Zitat
+            fields:
+              - name: text
+                label: Zitattext
+                type: text
+                required: true
+              - name: author
+                label: Autor
+                type: string
+
+      - name: linkReferences
+        label: Weiterfuhrende Links
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Linktitel
+            type: string
+            required: true
+          - name: targetType
+            label: Linktyp
+            type: select
+            options:
+              values:
+                - internal-page
+                - internal-subsection
+                - external-url
+            required: true
+          - name: page
+            label: Interne Seite
+            type: string
+          - name: subsection
+            label: Abschnittsanker
+            type: string
+          - name: url
+            label: Externe URL
+            type: string
 
       - name: body
         label: Inhalt
