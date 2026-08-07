@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "Website-Inhalte",
+      "path": "src/content/pages",
+    },
+    {
+      "name": "Bilder",
+      "path": "public/images",
+    },
+  ],
+  "settings": {
+    "explorer.compactFolders": false,
+    "workbench.startupEditor": "none",
+    "editor.minimap.enabled": false,
+  },
+}
