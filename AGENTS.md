@@ -8,6 +8,7 @@ The goal is a small, simple, maintainable static site. Avoid unnecessary framewo
 
 ## Conventions
 
+- Implementation language is Typescript. Avoid using JavaScript. If you should have to use JavaScript, DO NOT implement and inform me about the need.
 - Use `BaseLayout.astro` for all pages.
 - Use semantic HTML and avoid inline styles.
 - Keep images responsive; avoid fixed pixel dimensions unless necessary.

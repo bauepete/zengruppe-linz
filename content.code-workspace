@@ -9,9 +9,36 @@
       "path": "public/images",
     },
   ],
+
   "settings": {
     "explorer.compactFolders": false,
     "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
+
+    "task.allowAutomaticTasks": "on",
+    "workbench.browser.openLocalhostLinks": true,
+  },
+
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Astro Website",
+        "type": "shell",
+        "command": "npm run dev",
+        "options": {
+          "cwd": "${workspaceFolder:Website-Inhalte}/../../..",
+        },
+        "isBackground": true,
+        "problemMatcher": [],
+        "runOptions": {
+          "runOn": "folderOpen",
+        },
+        "presentation": {
+          "reveal": "never",
+          "panel": "dedicated",
+        },
+      },
+    ],
   },
 }
