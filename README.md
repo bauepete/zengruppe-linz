@@ -8,28 +8,19 @@ For structured pages, set template to structured-narrative and use these frontma
 
 - title: required page title
 - template: set to structured-narrative
-- introText: optional intro text, supports inline Markdown
-- heroImage: optional image path under /images
-- heroImageAlt: required when heroImage is set
+- lead: optional intro text, supports inline Markdown
 - content: ordered list of typed blocks
-- linkReferences: optional list of curated links
 
 Supported content block types in content:
 
-- type: sectionTitle with text (required)
-- type: subsectionTitle with text (required)
-- type: paragraph with text (required, inline Markdown supported)
-- type: unorderedList with items (required list of strings)
-- type: orderedList with items (required list of strings)
-- type: quote with text (required) and author (optional)
-
-Link reference entries in linkReferences:
-
-- label: required link text
-- targetType: one of internal-page, internal-subsection, external-url
-- page: required for internal-page and internal-subsection
-- subsection: required for internal-subsection
-- url: required for external-url and must start with http:// or https://
+- `sectionTitle` with text (required)
+- `subsectionTitle` with text (required)
+- `paragraph` with text (required, inline Markdown supported)
+- `image` with the following elements:
+  - `src`: path to image file (required)
+  - `alt`: alt text (required)
+  - `placement`: `left` | `right` | `centered`. Default value is `left`.
+  - `textWrap`: `aboveAndBelow` | `around` | `none`. Default value is `aboveAndBelow`.
 
 Multiline text behavior:
 
@@ -41,7 +32,6 @@ Inline links inside Markdown-capable text support:
 
 - `[label](/path/)` root-relative internal links (normalized with base path)
 - `[label](impressum)` bare internal page slug links
-- `[label](#anchor)`, `[label](./relative)`, `[label](../relative)`
 - `[label](https://example.org)` external links
 
 Unsupported inline link targets (for example protocol-relative URLs or unsupported schemes) are sanitized and rendered as plain text labels.

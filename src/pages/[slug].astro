@@ -3,7 +3,7 @@ import ContentPage from "../components/ContentPage.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const dynamicTextPageSlugs = new Set(["begleitung", "impressum"]);
+  const dynamicTextPageSlugs = new Set(["begleitung", "impressum", "leere-wolke", "links", "zendo-und-garten"]);
   const pages = await getCollection("pages");
 
   return pages
