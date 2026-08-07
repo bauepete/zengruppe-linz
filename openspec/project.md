@@ -11,14 +11,13 @@
 
 ## Technology Stack
 
-- The whole site is statically generated using Astro (<https://astro.build>).
-- Content is provided via md files which, in turn, are built via Pages CMS (<https://pagescms.org>).
+- The whole site is statically generated using Astro ([https://astro.build](https://astro.build)).
+- Content is provided via md files
 - The site is deployed via Github Pages
 
 ## Technical and Organizational Constraints
 
 - All repos are hosted by the github organization [zengruppe-linz](https://github.com/zengruppe-linz).
-- `.pages.yml` has to conform strictly to the specs of Pages CMS
 
 ## Deployment and Releasing of Software
 
@@ -52,5 +51,3 @@ Software releases are named after famous zen temples in Japan. If a name is tick
 - [ ] Sōji-ji
 - [ ] Tenryū-ji
 - [ ] Tōfuku-ji
-
-## Deployment and Release of Content

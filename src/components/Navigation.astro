@@ -1,20 +1,5 @@
 ---
-import { base, baseHref } from "../utils/paths";
-
-const normalize = (path: string) => {
-  const normalized = '/' + path.replace(/^\/+|\/+$/g, '');
-  return normalized === '/' ? '/' : normalized;
-};
-
-const basePath = normalize(base);
-const pathname = normalize(Astro.url.pathname);
-
-// GitHub-Pages-Prefix entfernen:
-// /zengruppe-linz/impressum -> /impressum
-const currentPath =
-  basePath !== '/' && pathname.startsWith(basePath)
-    ? normalize(pathname.slice(basePath.length))
-    : pathname;
+import { isActivePath, toPageHref } from "../utils/paths";
 
 const items = [
   { path: '/', label: 'Home' },
@@ -24,22 +9,17 @@ const items = [
   { path: '/links', label: 'Links' },
   { path: '/impressum', label: 'Impressum' },
 ];
-
-const hrefFor = (path: string) =>
-  path === '/'
-    ? baseHref
-    : `${baseHref}${path.slice(1)}/`;
 ---
 
 <div class="header-content">
-  <a class="site-title" href={baseHref}>Zen Linz</a>
+  <a class="site-title" href={toPageHref('/')}>Zen Linz</a>
 
   <nav class="navigation">
     {
       items.map(({ path, label }) => (
         <a
-          href={hrefFor(path)}
-          class={currentPath === path ? 'active' : ''}
+          href={toPageHref(path)}
+          class={isActivePath(Astro.url.pathname, path) ? 'active' : ''}
         >
           {label}
         </a>
